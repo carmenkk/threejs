@@ -80,10 +80,7 @@ const Customizer = () => {
    }
 
 
- 
-
-
-   const handleDecals = (type, result) => {
+    const handleDecals = (type, result) => {
      const decalType = DecalTypes[type]
      state[decalType.stateProperty] = result
      if(!activeFilterTab[decalType.filterTab]) {
@@ -107,7 +104,7 @@ const Customizer = () => {
         break;
     }
 
-      // after setting the state, activeFilterTab is updated
+  // after setting the state, activeFilterTab is updated
 
     setActiveFilterTab((prevState)=> {
       return {
@@ -173,13 +170,28 @@ const Customizer = () => {
                  isActiveTab={activeFilterTab[tab.name]}
                  handleClick={() => handleActiveFilterTab(tab.name)}/>
                ))}
+
+            <button className='download-btn' onClick={downloadCanvasToImage}>
+              <img
+                src={download}
+                alt='download_image'
+                className='w-3/5 h-3/5 object-contain'
+              />
+            </button>
          
 
         </motion.div>
+        
+        
+        
 
         </>
       )}
+      {/* Download button */}
+     
     </AnimatePresence>
+
+    
   )
 }
 
