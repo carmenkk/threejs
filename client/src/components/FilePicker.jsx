@@ -1,8 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-const FilePicker = () => {
+import CustomButton from './CustomButton';
+
+const FilePicker = ({ file, setFile, readFile }) => {
   return (
-    <div>FilePicker</div>
+    <div className='filepicker-container'>
+      <div className='flex-1 flex flex-col'>
+        <input
+          id="file-upload"
+          type='file'
+          accep='image/*'
+          onChange={(e)=> setFile(e.target.files[0])}
+        />
+        <label htmlFor='file-upload' className='filepicker-lable'>
+          Upload File
+        </label>
+      </div>
+    </div>
   )
 }
 
